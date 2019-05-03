@@ -1,0 +1,12 @@
+<Sysmon schemaversion="4.0">
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+	<ProcessCreate onmatch="include">
+	  <Image name="Executables" condition="end with">.exe</Image>
+	</ProcessCreate>
+	<ProcessTerminate onmatch="exclude"/>
+    <NetworkConnect onmatch="include">
+		<Image name="Conexions iexplorer" condition="contains">iexplore.exe</Image>
+	</NetworkConnect>
+  </EventFiltering>
+</Sysmon>
